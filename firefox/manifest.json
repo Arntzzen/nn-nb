@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Nynorsk til Bokmål",
+  "version": "1.1.0",
+  "description": "Oversetter nynorsk nettsidetekst automatisk til bokmål.",
+
+  "permissions": [
+    "storage"
+  ],
+
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Nynorsk til Bokmål"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["dictionary.json"],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "translator.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "nynorsk-bokmal@example.org",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  }
+}

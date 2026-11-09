@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 340px;
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+  color: #202333;
+}
+
+.container {
+  padding: 15px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #3157d5;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 16px;
+  margin: 0 0 5px;
+}
+
+.header p {
+  font-size: 12px;
+  color: #777;
+  margin: 0;
+}
+
+.status-card {
+  background: white;
+  padding: 5px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-card strong {
+  font-size: 14px;
+}
+
+.status-card p {
+  font-size: 11px;
+  color: #777;
+  margin: 6px 0 0;
+}
+
+.switch {
+  position: relative;
+  width: 44px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  background: #ccc;
+  border-radius: 30px;
+  transition: 0.2s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 19px;
+  width: 19px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+input:checked + .slider {
+  background: #3157d5;
+}
+
+input:checked + .slider:before {
+  transform: translateX(19px);
+}
+
+.footer {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 13px;
+  margin-top: 10px;
+  font-size: 10px;
+  color: #999;
+}
